@@ -44,6 +44,12 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// ②
 	
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
+		/* 等价于
+			@RequestMapping("/index")
+			public String hello() {
+				return "index";
+			}
+		*/
 		registry.addViewController("/index").setViewName("/index");
 	}
 }

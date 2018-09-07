@@ -11,7 +11,8 @@
 
 <div class="upload">
 	<form action="upload" enctype="multipart/form-data" method="post">
-		<input type="file" name="file"/><br/>
+	    <!-- 可多选上传 -->
+		<input type="file" name="file" multiple /><br/>
 		<input type="submit" value="上传">
 	</form>
 </div>

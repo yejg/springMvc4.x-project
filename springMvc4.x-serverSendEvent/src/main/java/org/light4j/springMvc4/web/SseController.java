@@ -43,6 +43,7 @@ public class SseController {
 				pw.flush();
 				count++;
 				if(count>5){
+					pw.close();
 					return;
 				}
 			} catch (Exception e) {

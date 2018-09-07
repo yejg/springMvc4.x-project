@@ -59,7 +59,8 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// ②
 	@Bean
 	public MultipartResolver multipartResolver() {
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-		multipartResolver.setMaxUploadSize(1000000);
+		// 限制 单次 请求上传所有文件total size 的大小
+		multipartResolver.setMaxUploadSize(1024*1024);// 1M
 		return multipartResolver;
 	}
 }

@@ -17,11 +17,14 @@ public class DemoAnnoController {
         return "url:" + request.getRequestURL() + " can access";
     }
 
-    @RequestMapping(value = "/pathvar/{str}", produces = "text/plain;charset=UTF-8")// ⑤
-    public @ResponseBody String demoPathVar(@PathVariable String str, //③
-            HttpServletRequest request) {
-        return "url:" + request.getRequestURL() + " can access,str: " + str;
-    }
+    // ⑤
+	@RequestMapping(value = "/pathvar/{str}", produces = "text/plain;charset=UTF-8")
+	public @ResponseBody String demoPathVar(@PathVariable String str, // ③
+			HttpServletRequest request) {
+		// 请求【http://localhost/springMvc4.x-pathMatchParameter/anno/pathvar/xxx.yy】时，str得到的值为xxx，"."后面的yy被忽略
+		// 可以在MyMvcConfig中复写configurePathMatch方法，设置【configurer.setUseSuffixPatternMatch(false);】
+		return "url:" + request.getRequestURL() + " can access,str: " + str;
+	}
 
     @RequestMapping(value = "/requestParam", produces = "text/plain;charset=UTF-8") //⑥
     public @ResponseBody String passRequestParam(Long id,
