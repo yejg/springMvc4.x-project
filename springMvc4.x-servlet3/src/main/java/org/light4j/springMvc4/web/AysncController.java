@@ -1,6 +1,7 @@
 package org.light4j.springMvc4.web;
 
 import java.io.IOException;
+import java.util.concurrent.Callable;
 
 import org.light4j.springMvc4.service.PushService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,25 @@ public class AysncController {
     @Autowired
     PushService pushService; //①
 
+	@RequestMapping("/callable")
+	@ResponseBody
+	public Callable<String> callableCall() {
+		Callable<String> callable = new Callable<String>() {
+
+			@Override
+			public String call() throws Exception {
+				Thread.sleep(5000);
+
+				System.out.println("实际工作执行完成！");
+
+				return "succeed!";
+			}
+		};
+
+		System.out.println("Controller执行结束！");
+		return callable;
+	}
+    
     @RequestMapping("/defer")
     @ResponseBody
     public DeferredResult<String> deferredCall() { //②

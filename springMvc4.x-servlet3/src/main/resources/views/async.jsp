@@ -30,6 +30,7 @@
             console.log("连接打开.");
        }, false);
        
+       // 响应finish事件，主动关闭EventSource
        source.addEventListener('finish', function(e) {
            console.log("数据接收完毕，关闭EventSource");
            source.close();
@@ -41,7 +42,6 @@
                console.log("连接关闭");
             } else {
                 console.log(e);
-                alert(e);
             }
        }, false);
     } else {
