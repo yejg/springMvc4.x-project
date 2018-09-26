@@ -32,4 +32,4 @@ Fork from https://github.com/longjiazuo/springMvc4.x-project
 实现要点：
 - 添加 hibernate-validator 依赖
 - 在MyMvcConfig中，new一个MethodValidationPostProcessor交给Spring容器管理[对象参数校验无需此对象]
-- 在Controller的类头上需要加 @Validated 注解 [一定是加载类头上，加载参数前无效]
+- 在Controller的类头上需要加 @Validated 注解 [一定是加载类头上，加在参数前无效]
