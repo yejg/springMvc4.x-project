@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.light4j</groupId>
 	<artifactId>springMvc4.x-project</artifactId>
@@ -18,9 +17,10 @@
 		<module>springMvc4.x-pathMatchParameter</module>
 		<module>springMvc4.x-fileUpload</module>
 		<module>springMvc4.x-httpMessageConverter</module>
+		<module>springMvc4.x-test</module>
 		<module>springMvc4.x-serverSendEvent</module>
 		<module>springMvc4.x-servlet3</module>
-		<module>springMvc4.x-test</module>
+		<module>springMvc4.x-argument</module>
 	</modules>
 	<properties>
 		<!-- Generic properties -->
@@ -37,6 +37,22 @@
 		<logback.version>1.0.13</logback.version>
 		<slf4j.version>1.7.5</slf4j.version>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>2.9.2</version>
+			</dependency>
+			
+			<dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>5.1.3.Final</version>
+            </dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
