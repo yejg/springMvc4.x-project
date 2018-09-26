@@ -1,6 +1,6 @@
 ## About
 Fork from https://github.com/longjiazuo/springMvc4.x-project  
-基于此代码，修改了一点小问题，并加了一些自己的demo
+基于此代码，修改了一点[小问题](https://yejg.top/2018/09/07/server-send-event/)，并加了一些自己的demo
 
 
 ## 增加模块
